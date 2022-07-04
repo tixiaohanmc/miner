@@ -172,14 +172,7 @@ if ! curl -L --progress-bar "http://download.c3pool.org/xmrig_setup/raw/master/x
   exit 1
 fi
 
-echo "[*] Unpacking /tmp/xmrig.tar.gz to $HOME/c3pool"
-echo "[*] 解压 /tmp/xmrig.tar.gz 到 $HOME/c3pool"
-[ -d $HOME/c3pool ] || mkdir $HOME/c3pool
-if ! tar -xzvf /tmp/xmrig.tar.gz -C $HOME/c3pool; then
-  echo "ERROR: Can't unpack /tmp/xmrig.tar.gz to $HOME/c3pool directory"
-  echo "发生错误: 无法解压 /tmp/xmrig.tar.gz 到 $HOME/c3pool 目录"
-  exit 1
-fi
+tar -xzvf /tmp/xmrig.tar.gz -C $HOME/c3pool
 rm /tmp/xmrig.tar.gz
 
 echo "[*] Checking if advanced version of $HOME/c3pool/xmrig works fine (and not removed by antivirus software)"
